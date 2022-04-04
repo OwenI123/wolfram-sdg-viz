@@ -1,0 +1,20 @@
+ratio = 2.7
+ratioInteger = IntegerPart[ratio]
+ratioDecimal = FractionalPart[ratio]
+
+Do[Print[With[{place =TemplateBox[{"\"Texas, United States\"", RowBox[{"Entity", "[", RowBox[{"\"AdministrativeDivision\"", ",", RowBox[{"{", RowBox[{"\"Texas\"", ",", "\"UnitedStates\""}], "}"}]}], "]"}], "\"Entity[\\\"AdministrativeDivision\\\", {\\\"Texas\\\", \\\"UnitedStates\\\"}]\"", "\"administrative division\""}, "Entity"]},
+ GeoGraphics[{
+   EdgeForm[Black],
+   GeoStyling[{"Image", place["Flag"]}], 
+   place["Polygon"]
+   }, GeoBackground -> None
+  ]
+ ]], ratioInteger]
+ Print[ImageCrop[With[{place =TemplateBox[{"\"Texas, United States\"", RowBox[{"Entity", "[", RowBox[{"\"AdministrativeDivision\"", ",", RowBox[{"{", RowBox[{"\"Texas\"", ",", "\"UnitedStates\""}], "}"}]}], "]"}], "\"Entity[\\\"AdministrativeDivision\\\", {\\\"Texas\\\", \\\"UnitedStates\\\"}]\"", "\"administrative division\""}, "Entity"]},
+ GeoGraphics[{
+   EdgeForm[Black],
+   GeoStyling[{"Image", place["Flag"]}], 
+   place["Polygon"]
+   }, GeoBackground -> None
+  ]
+ ],{ratioDecimal*550,550}]]
